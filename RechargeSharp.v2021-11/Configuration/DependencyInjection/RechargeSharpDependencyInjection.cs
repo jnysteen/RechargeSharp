@@ -5,6 +5,7 @@ using Microsoft.Extensions.Http;
 using RechargeSharp.v2021_11.Endpoints.Addresses;
 using RechargeSharp.v2021_11.Endpoints.Customers;
 using RechargeSharp.v2021_11.Endpoints.PaymentMethods;
+using RechargeSharp.v2021_11.Endpoints.Products;
 using RechargeSharp.v2021_11.Endpoints.Subscriptions;
 using RechargeSharp.v2021_11.Utilities;
 using RechargeSharp.v2021_11.Utilities.Logging;
@@ -38,7 +39,9 @@ public static class RechargeSharpDependencyInjection
             .AddTransient<IAddressService,AddressService>()
             .AddTransient<ICustomerService, CustomerService>()
             .AddTransient<ISubscriptionService, SubscriptionService>()
-            .AddTransient<IPaymentMethodService, PaymentMethodService>();
+            .AddTransient<IPaymentMethodService, PaymentMethodService>()
+            .AddTransient<IProductService, ProductService>()
+            ;
 
         return services;
     }
